@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "入门实践", "入门实�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "排序", "排序\排序.csproj", "{D1D2B13F-9E7E-45C0-8A3A-DACC17B6F9A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "基础实践", "基础实践\基础实践.csproj", "{B3D2EFBD-76F1-46A4-871B-F310B3F87773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "基础实践", "基础实践\基础实践.csproj", "{B3D2EFBD-76F1-46A4-871B-F310B3F87773}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "知识点", "知识点", "{C2C2CE63-E0E6-491B-A1F5-A8B0188AA52D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +62,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B173CF3D-7D23-47DE-9314-72B9CADF3D84} = {C2C2CE63-E0E6-491B-A1F5-A8B0188AA52D}
+		{C5E27599-E257-4CEF-BC9A-E6D07D822B02} = {C2C2CE63-E0E6-491B-A1F5-A8B0188AA52D}
+		{3FD763D5-9A53-4E43-88EA-70C991F47578} = {C2C2CE63-E0E6-491B-A1F5-A8B0188AA52D}
+		{ABB58FCF-67FB-4D91-8BFF-4A16A8D23D1A} = {C2C2CE63-E0E6-491B-A1F5-A8B0188AA52D}
+		{A6817D96-5131-45D7-962B-8AB5E5B84D56} = {C2C2CE63-E0E6-491B-A1F5-A8B0188AA52D}
+		{D1D2B13F-9E7E-45C0-8A3A-DACC17B6F9A3} = {C2C2CE63-E0E6-491B-A1F5-A8B0188AA52D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E61C8681-BBFA-46E5-AEBB-E261692EC522}
