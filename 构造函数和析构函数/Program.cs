@@ -7,22 +7,13 @@
         public int age;
         public bool sex;
 
-        public Person() 
-        {
-            id = 1;
-            name = "";
-            age = 1;
-            sex = false;
-        }
-
-        public Person(int id):this()
+        public Person(int id)
         {
             this.id = id;
         }
 
-        public Person(int id, string name, int age, bool sex)
+        public Person(int id, string name, int age, bool sex):this(id)
         {
-            this.id = id;
             this.name = name;
             this.age = age;
             this.sex = sex;
@@ -39,22 +30,14 @@
         public string name;
         public Person[] students;
 
-        public Class()
-        {
-            id = 1;
-            name = "";
-            students = new Person[0];
-        }
-
-        public Class(string name) : this()
+        public Class(string name)
         {
             this .name = name;
         }
 
-        public Class(int id, string name)
+        public Class(int id, string name):this(name)
         {
             this.id = id;
-            this.name = name;
         }
 
         public void PrintInfo()
@@ -64,40 +47,38 @@
     }
     class Ticket
     {
-        public int distance;
-        public int value;
+        public uint distance;
+        public float price;
 
-        public Ticket(int distance)
+        public Ticket(uint distance)
         {
-            if (distance < 0)
+            this.distance = distance;
+            price = GetPrice();
+        }
+        private float GetPrice()
+        {
+            if (distance <= 100)
             {
-                this.distance = 0;
-                value = this.distance;
-            }
-            else if(distance <= 100)
-            {
-                this.distance = distance;
-                value = distance;
+                price = distance;
             }
             else if (distance <= 200)
             {
-                this.distance = distance;
-                value = (int)(distance * 0.95);
+                price = distance * 0.95f;
             }
-            else if(distance <= 300)
+            else if (distance <= 300)
             {
-                this.distance = distance;
-                value = (int)(distance * 0.9);}
+                price = distance * 0.9f;
+            }
             else
             {
-                this.distance = distance;
-                value = (int)(distance * 0.8);
+                price = distance * 0.8f;
             }
-            
+            return price  / 10000 * 10000;
         }
-        public void GetPrice()
+
+        public void PrintInfo()
         {
-            Console.Write("{0}公里{1}块钱", distance, value);
+            Console.Write("{0}公里{1}块钱", distance, price);
         }
     }
     internal class Program
@@ -114,8 +95,8 @@
             Class class2 = new Class(1101,"自然");
             class2.PrintInfo();
 
-            Ticket t1 = new Ticket(321);
-            t1.GetPrice();
+            Ticket t1 = new Ticket(300);
+            t1.PrintInfo();
         }
     }
 }
