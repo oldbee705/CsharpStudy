@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace 基础实践
+﻿namespace 基础实践
 {
     //场景
     enum E_Scene
