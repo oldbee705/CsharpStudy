@@ -28,7 +28,7 @@
         {
             if(Select(lownum) != 114514)
             {
-                [Select(lownum)] = newnum;
+                
             }
         }
         public int Select(int num)
