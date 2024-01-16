@@ -1,4 +1,5 @@
-﻿namespace 核心实践
+﻿
+namespace 核心实践
 {
     internal class Program
     {
