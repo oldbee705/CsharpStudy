@@ -13,17 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "递归函数", "递归函�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "结构体", "结构体\结构体.csproj", "{A6817D96-5131-45D7-962B-8AB5E5B84D56}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "入门实践", "入门实践\入门实践.csproj", "{7E6C6916-7EE1-49E4-BBB2-A8013FD054ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "入门实践控制台小游戏", "入门实践\入门实践控制台小游戏.csproj", "{7E6C6916-7EE1-49E4-BBB2-A8013FD054ED}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "排序", "排序\排序.csproj", "{D1D2B13F-9E7E-45C0-8A3A-DACC17B6F9A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "基础实践", "基础实践\基础实践.csproj", "{B3D2EFBD-76F1-46A4-871B-F310B3F87773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "基础实践飞行棋", "基础实践\基础实践飞行棋.csproj", "{B3D2EFBD-76F1-46A4-871B-F310B3F87773}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "基础", "基础", "{C2C2CE63-E0E6-491B-A1F5-A8B0188AA52D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "构造函数和析构函数", "构造函数和析构函数\构造函数和析构函数.csproj", "{6FDC9501-3F03-4147-8874-3A3548BA6849}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "核心实践", "核心实践\核心实践.csproj", "{A9FF1F6F-E70F-49C9-A72F-B1ADB6C5DD56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "核心实践贪吃蛇", "核心实践\核心实践贪吃蛇.csproj", "{A9FF1F6F-E70F-49C9-A72F-B1ADB6C5DD56}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "成员属性", "成员属性\成员属性.csproj", "{6FF6EB48-BBF9-4426-BC14-4D4855F20FBD}"
 EndProject
