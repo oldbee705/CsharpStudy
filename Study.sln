@@ -91,11 +91,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "List", "List\List.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dictionary", "Dictionary\Dictionary.csproj", "{8E433CA3-AD51-4DEC-9296-883674D94089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "顺序存储和链式存储", "顺序存储和链式存储\顺序存储和链式存储.csproj", "{BC1D1589-71F2-4E18-9D98-633323C1BAF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "顺序存储和链式存储", "顺序存储和链式存储\顺序存储和链式存储.csproj", "{BC1D1589-71F2-4E18-9D98-633323C1BAF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{09A69802-F1A6-41B5-9DE7-965821183F10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList\LinkedList.csproj", "{09A69802-F1A6-41B5-9DE7-965821183F10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "泛型栈和队列", "泛型栈和队列\泛型栈和队列.csproj", "{378F2A1E-1A76-4A4A-A9AD-2F8BEDA7916B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "泛型栈和队列", "泛型栈和队列\泛型栈和队列.csproj", "{378F2A1E-1A76-4A4A-A9AD-2F8BEDA7916B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "委托", "委托\委托.csproj", "{6B0CAB73-A27C-42FF-8929-B660A486BCB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -263,6 +265,10 @@ Global
 		{378F2A1E-1A76-4A4A-A9AD-2F8BEDA7916B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{378F2A1E-1A76-4A4A-A9AD-2F8BEDA7916B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{378F2A1E-1A76-4A4A-A9AD-2F8BEDA7916B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B0CAB73-A27C-42FF-8929-B660A486BCB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B0CAB73-A27C-42FF-8929-B660A486BCB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B0CAB73-A27C-42FF-8929-B660A486BCB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B0CAB73-A27C-42FF-8929-B660A486BCB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -309,6 +315,7 @@ Global
 		{BC1D1589-71F2-4E18-9D98-633323C1BAF8} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 		{09A69802-F1A6-41B5-9DE7-965821183F10} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 		{378F2A1E-1A76-4A4A-A9AD-2F8BEDA7916B} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
+		{6B0CAB73-A27C-42FF-8929-B660A486BCB1} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E61C8681-BBFA-46E5-AEBB-E261692EC522}
