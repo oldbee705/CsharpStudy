@@ -99,7 +99,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "泛型栈和队列", "泛�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "委托", "委托\委托.csproj", "{6B0CAB73-A27C-42FF-8929-B660A486BCB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event", "Event\Event.csproj", "{B7E3C8F4-5E06-42A7-93D2-DB6F7B927999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event", "Event\Event.csproj", "{B7E3C8F4-5E06-42A7-93D2-DB6F7B927999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "匿名函数", "匿名函数\匿名函数.csproj", "{CEFF65FD-A20C-4B01-8DC9-5D0BB08B0C92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -275,6 +277,10 @@ Global
 		{B7E3C8F4-5E06-42A7-93D2-DB6F7B927999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7E3C8F4-5E06-42A7-93D2-DB6F7B927999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7E3C8F4-5E06-42A7-93D2-DB6F7B927999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFF65FD-A20C-4B01-8DC9-5D0BB08B0C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFF65FD-A20C-4B01-8DC9-5D0BB08B0C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFF65FD-A20C-4B01-8DC9-5D0BB08B0C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFF65FD-A20C-4B01-8DC9-5D0BB08B0C92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -323,6 +329,7 @@ Global
 		{378F2A1E-1A76-4A4A-A9AD-2F8BEDA7916B} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 		{6B0CAB73-A27C-42FF-8929-B660A486BCB1} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 		{B7E3C8F4-5E06-42A7-93D2-DB6F7B927999} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
+		{CEFF65FD-A20C-4B01-8DC9-5D0BB08B0C92} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E61C8681-BBFA-46E5-AEBB-E261692EC522}
