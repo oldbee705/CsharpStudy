@@ -1,5 +1,9 @@
 ﻿namespace 反射类库
 {
+    class MyCustomAttribute : Attribute
+    {
+
+    }
     public struct Position
     {
         public int x;
@@ -9,7 +13,8 @@
     }
     public class Player
     {
-        public string Name;
+        [MyCustom()]
+        public string name;
         public int hp;
         public int atk;
         public int def;

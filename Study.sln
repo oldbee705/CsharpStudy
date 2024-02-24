@@ -105,13 +105,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "匿名函数", "匿名函�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lambad表达式", "lambad表达式\lambad表达式.csproj", "{8E9B7118-CCD0-4271-97D4-6F6209E020CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List排序", "List排序\List排序.csproj", "{D98B6419-4979-4957-B4E5-AA7936F835A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "List排序", "List排序\List排序.csproj", "{D98B6419-4979-4957-B4E5-AA7936F835A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "协变逆变", "协变逆变\协变逆变.csproj", "{BEC2CB47-6881-4F33-9BD6-8D09556C9DFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "协变逆变", "协变逆变\协变逆变.csproj", "{BEC2CB47-6881-4F33-9BD6-8D09556C9DFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thread多线程", "Thread\Thread多线程.csproj", "{09755D98-B178-4517-A3CA-983970FB545D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thread多线程", "Thread\Thread多线程.csproj", "{09755D98-B178-4517-A3CA-983970FB545D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "预处理器指令", "预处理器指令\预处理器指令.csproj", "{08C20BDF-57D9-4F7B-997B-FD25DA1B03CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "预处理器指令", "预处理器指令\预处理器指令.csproj", "{08C20BDF-57D9-4F7B-997B-FD25DA1B03CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "反射", "反射\反射.csproj", "{4D141CD0-0DEB-43C0-A344-EDD87A42686A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "特性", "特性\特性.csproj", "{E2ADC164-E637-4B5B-9603-451CA7AD29AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "反射类库", "反射类库\反射类库.csproj", "{350C2967-402B-4EE5-B94E-74C21D7937EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -311,6 +317,18 @@ Global
 		{08C20BDF-57D9-4F7B-997B-FD25DA1B03CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C20BDF-57D9-4F7B-997B-FD25DA1B03CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C20BDF-57D9-4F7B-997B-FD25DA1B03CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D141CD0-0DEB-43C0-A344-EDD87A42686A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D141CD0-0DEB-43C0-A344-EDD87A42686A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D141CD0-0DEB-43C0-A344-EDD87A42686A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D141CD0-0DEB-43C0-A344-EDD87A42686A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2ADC164-E637-4B5B-9603-451CA7AD29AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2ADC164-E637-4B5B-9603-451CA7AD29AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2ADC164-E637-4B5B-9603-451CA7AD29AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2ADC164-E637-4B5B-9603-451CA7AD29AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{350C2967-402B-4EE5-B94E-74C21D7937EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{350C2967-402B-4EE5-B94E-74C21D7937EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{350C2967-402B-4EE5-B94E-74C21D7937EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{350C2967-402B-4EE5-B94E-74C21D7937EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -365,6 +383,8 @@ Global
 		{BEC2CB47-6881-4F33-9BD6-8D09556C9DFE} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 		{09755D98-B178-4517-A3CA-983970FB545D} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 		{08C20BDF-57D9-4F7B-997B-FD25DA1B03CD} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
+		{4D141CD0-0DEB-43C0-A344-EDD87A42686A} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
+		{E2ADC164-E637-4B5B-9603-451CA7AD29AB} = {ACF60CBB-5692-4EF5-B1CF-BE123D1C0E54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E61C8681-BBFA-46E5-AEBB-E261692EC522}
