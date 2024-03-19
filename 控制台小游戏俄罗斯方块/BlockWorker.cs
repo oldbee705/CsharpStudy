@@ -6,14 +6,22 @@ using System.Threading.Tasks;
 
 namespace 俄罗斯方块
 {
+    enum E_Change_Type
+    {
+        Left,
+        Right
+    }
     class BlockWorker : IDraw
     {
+        
         //被创建的方块
         private List<DrawObject> blocks;
         //被创建方块的信息
         private Dictionary<E_CubeType, BlockInfo> blocksInfoDic;
         //被创建的方块的当前信息
         private BlockInfo nowBlockInfo;
+        //当前形态的索引
+        private int nowInfoIndex;
         public BlockWorker()
         {
             blocksInfoDic = new Dictionary<E_CubeType, BlockInfo>()
@@ -38,7 +46,15 @@ namespace 俄罗斯方块
             }
         }
 
-        private void RandomCreateBlocks()
+        public void Clear()
+        {
+            for(int i = 0;i < blocks.Count; i++)
+            {
+                blocks[i].Clear();
+            }
+        }
+        //随机创建方块们
+        public void RandomCreateBlocks()
         {
             Random r = new Random();
             //随机一种类型
@@ -55,16 +71,90 @@ namespace 俄罗斯方块
             nowBlockInfo = blocksInfoDic[type];
 
             //随机一种形态
-            int index = r.Next(0, blocksInfoDic.Count);
-            Position[] pos = nowBlockInfo[index];
+            nowInfoIndex = r.Next(0, blocksInfoDic.Count);
 
+            //设置方块们的位置
+            Position[] pos = nowBlockInfo[nowInfoIndex];
             blocks[0].pos = new Position(24, 5);
             for (int i = 0; i < pos.Length; i++)
             {
                 blocks[i + 1].pos = blocks[0].pos + pos[i];
             }
         }
-
-
+        public void Change(E_Change_Type type)
+        {
+            Clear();
+            switch (type)
+            {
+                case E_Change_Type.Left:
+                    --nowInfoIndex;
+                    if(nowInfoIndex < 0)
+                    {
+                        nowInfoIndex = nowBlockInfo.Count - 1;
+                    }
+                    break;
+                case E_Change_Type.Right:
+                    ++nowInfoIndex;
+                    if(nowInfoIndex >= nowBlockInfo.Count)
+                    {
+                        nowInfoIndex = 0;
+                    }
+                    break;
+            }
+            Position[] pos = nowBlockInfo[nowInfoIndex];
+            blocks[0].pos = new Position(24, 5);
+            for (int i = 0; i < pos.Length; i++)
+            {
+                blocks[i + 1].pos = blocks[0].pos + pos[i];
+            }
+            Draw();
+        }
+        public bool CanChange(E_Change_Type type, Map map)
+        {
+            int nowIndex = nowInfoIndex;
+            switch (type)
+            {
+                case E_Change_Type.Left:
+                    --nowIndex;
+                    if (nowIndex < 0)
+                    {
+                        nowIndex = nowBlockInfo.Count - 1;
+                    }
+                    break;
+                case E_Change_Type.Right:
+                    ++nowIndex;
+                    if (nowIndex >= nowBlockInfo.Count)
+                    {
+                        nowIndex = 0;
+                    }
+                    break;
+            }
+            Position[] nowPos = nowBlockInfo[nowIndex];
+            Position tempPos;
+            //判断是否超出地图边缘
+            for (int i = 0; i < nowPos.Length; i++)
+            {
+                tempPos = blocks[0].pos + nowPos[i];
+                if (tempPos.x < 2 ||
+                    tempPos.x >= Game.w - 2 ||
+                    tempPos.y >= Game.h - 5)
+                {
+                    return false;
+                }
+            }
+            //判断是否和动态地图重叠
+            for(int i = 0; i < nowPos.Length; i++)
+            {
+                tempPos = blocks[0].pos + nowPos[i];
+                for (int j = 0; j < map.dynamicWalls.Count; j++)
+                {
+                    if (tempPos == map.dynamicWalls[j].pos)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }

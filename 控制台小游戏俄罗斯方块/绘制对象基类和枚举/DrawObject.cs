@@ -69,6 +69,12 @@ namespace 俄罗斯方块
             Console.Write("■");
         }
 
+        public void Clear()
+        {
+            Console.SetCursorPosition(pos.x, pos.y);
+            Console.Write("  ");
+        }
+
         public void ChangeType(E_CubeType type)
         {
             cubeType = type;

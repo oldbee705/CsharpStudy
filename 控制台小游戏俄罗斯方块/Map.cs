@@ -9,7 +9,7 @@ namespace 俄罗斯方块
     class Map : IDraw
     {
         private List<DrawObject> walls;
-        private List<DrawObject> dynamicWalls;
+        public List<DrawObject> dynamicWalls;
         public Map()
         {
             walls = new List<DrawObject>();
