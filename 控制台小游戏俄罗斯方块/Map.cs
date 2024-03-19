@@ -22,6 +22,8 @@ namespace 俄罗斯方块
             {
                 walls.Add(new DrawObject(i, Game.h - 5, E_CubeType.Wall));
             }
+
+            dynamicWalls = new List<DrawObject>();
         }
         public void Draw()
         {

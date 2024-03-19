@@ -22,8 +22,13 @@ namespace 俄罗斯方块
     }
     class DrawObject : IDraw
     {
-        private Position pos;
+        public Position pos;
         private E_CubeType cubeType;
+
+        public DrawObject(E_CubeType type)
+        {
+            this.cubeType = type;
+        }
 
         public DrawObject(int x, int y)
         {
