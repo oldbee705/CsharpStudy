@@ -196,5 +196,48 @@ namespace 俄罗斯方块
             }
             return true;
         }
+        //自动下落
+        public void AutoMove()
+        {
+            Clear();
+            Position movePos = new Position(0, 1);
+            for (int i = 0;i < blocks.Count;i++)
+            {
+                blocks[i].pos += movePos;
+            }
+            Draw();
+        }
+        //能否下落
+        public bool CanDown(Map map)
+        {
+            Position movePos = new Position(0, 1);
+            Position tempPos;
+            //是否超出地图边界
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                tempPos = blocks[i].pos + movePos;
+                if(tempPos.y >= Game.h - 5)
+                {
+                    map.AddDynamicWalls(blocks);
+                    RandomCreateBlocks();
+                    return false;
+                }
+            }
+            //是否接触动态墙壁
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                tempPos = blocks[i].pos + movePos;
+                for(int j = 0; j < map.dynamicWalls.Count; j++)
+                {
+                    if(tempPos == map.dynamicWalls[j].pos)
+                    {
+                        map.AddDynamicWalls(blocks);
+                        RandomCreateBlocks();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }
