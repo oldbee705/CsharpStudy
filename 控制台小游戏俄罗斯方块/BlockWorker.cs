@@ -37,7 +37,6 @@ namespace 俄罗斯方块
 
             RandomCreateBlocks();
         }
-
         public void Draw()
         {
             for (int i = 0; i < blocks.Count; i++)
@@ -45,7 +44,6 @@ namespace 俄罗斯方块
                 blocks[i].Draw();
             }
         }
-
         public void Clear()
         {
             for(int i = 0;i < blocks.Count; i++)
@@ -81,6 +79,7 @@ namespace 俄罗斯方块
                 blocks[i + 1].pos = blocks[0].pos + pos[i];
             }
         }
+        //改变形态
         public void Change(E_Change_Type type)
         {
             Clear();
@@ -102,13 +101,13 @@ namespace 俄罗斯方块
                     break;
             }
             Position[] pos = nowBlockInfo[nowInfoIndex];
-            blocks[0].pos = new Position(24, 5);
             for (int i = 0; i < pos.Length; i++)
             {
-                blocks[i + 1].pos = blocks[0].pos + pos[i];
+                blocks[i+1].pos = blocks[0].pos + pos[i];
             }
             Draw();
         }
+        //能否改变形态
         public bool CanChange(E_Change_Type type, Map map)
         {
             int nowIndex = nowInfoIndex;
@@ -149,6 +148,47 @@ namespace 俄罗斯方块
                 for (int j = 0; j < map.dynamicWalls.Count; j++)
                 {
                     if (tempPos == map.dynamicWalls[j].pos)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        //左右移动
+        public void MoveLR(E_Change_Type type)
+        {
+            Clear();
+            //原位置+偏移
+            Position movePos = new Position((type == E_Change_Type.Left ? -2 : 2), 0);
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                blocks[i].pos += movePos;
+            }
+            Draw();
+        }
+        //能否移动
+        public bool CanMove(E_Change_Type type, Map map)
+        {
+            //判断是否超出边界
+            Position movePos = new Position((type == E_Change_Type.Left ? -2 : 2), 0);
+            Position tempPos;
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                tempPos = blocks[i].pos + movePos;
+                if(tempPos.x < 2|| 
+                   tempPos.x >= Game.w - 2)
+                {
+                    return false;
+                }
+            }
+            //判断是否和动态墙壁重叠
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                tempPos = blocks[i].pos + movePos;
+                for (int j = 0; j < map.dynamicWalls.Count; j++)
+                {
+                    if( tempPos == map.dynamicWalls[j].pos)
                     {
                         return false;
                     }

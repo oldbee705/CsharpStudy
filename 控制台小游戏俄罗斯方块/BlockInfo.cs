@@ -119,7 +119,7 @@ namespace 俄罗斯方块
                     new Position(0,1)
                     });
                     posList.Add(new Position[3] {
-                    new Position(2,1),
+                    new Position(2,-1),
                     new Position(2,0),
                     new Position(-2,0)
                     });
