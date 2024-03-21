@@ -42,6 +42,8 @@ namespace 俄罗斯方块
         }
         public void Draw()
         {
+            if(pos.y < 0)
+                return;
             Console.SetCursorPosition(pos.x, pos.y);
             switch (cubeType)
             {
@@ -71,6 +73,8 @@ namespace 俄罗斯方块
 
         public void Clear()
         {
+            if (pos.y < 0)
+                return;
             Console.SetCursorPosition(pos.x, pos.y);
             Console.Write("  ");
         }

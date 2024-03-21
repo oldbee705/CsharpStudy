@@ -13,10 +13,12 @@ namespace 俄罗斯方块
         Map map;
         BlockWorker blockWorker;
         Thread inputThread;
+        private bool isRunning;
 
         public GameScene()
         {
-            map = new Map();
+            isRunning = true;
+            map = new Map(this);
             blockWorker = new BlockWorker();
 
             inputThread = new Thread(CheckInputThread);
@@ -35,10 +37,15 @@ namespace 俄罗斯方块
             }
             Thread.Sleep(100);
         }
+        public void stopThread()
+        {
+            isRunning = false;
+            inputThread = null;
+        }
 
         private void CheckInputThread()
         {
-            while(true)
+            while(isRunning)
             {
                 //检测输入
                 if (Console.KeyAvailable)

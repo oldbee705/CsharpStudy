@@ -73,7 +73,7 @@ namespace 俄罗斯方块
 
             //设置方块们的位置
             Position[] pos = nowBlockInfo[nowInfoIndex];
-            blocks[0].pos = new Position(24, 5);
+            blocks[0].pos = new Position(24, -5);
             for (int i = 0; i < pos.Length; i++)
             {
                 blocks[i + 1].pos = blocks[0].pos + pos[i];

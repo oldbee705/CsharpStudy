@@ -11,13 +11,14 @@ namespace 俄罗斯方块
         private List<DrawObject> walls;
         public List<DrawObject> dynamicWalls;
         private List<DrawObject> delWalls;
+        private GameScene gameScene;
         //地图中x轴上的容量
         private int w;
         //地图中y轴上的容量
         private int h;
         //记录每一行有多少个方块
         private int[] recordInfo;
-        public Map()
+        public Map(GameScene gameScene)
         {
             w = 0;
             h = Game.h - 6;
@@ -25,6 +26,7 @@ namespace 俄罗斯方块
             walls = new List<DrawObject>();
             dynamicWalls = new List<DrawObject>();
             delWalls = new List<DrawObject>();
+            this.gameScene = gameScene;
             for (int i = 0; i < Game.h - 5 ; i++)
             {
                 walls.Add(new DrawObject(0, i,E_CubeType.Wall));
@@ -55,6 +57,15 @@ namespace 俄罗斯方块
             {
                 walls[i].ChangeType(E_CubeType.Wall);
                 dynamicWalls.Add(walls[i]);
+                //游戏结束
+                if (walls[i].pos.y <= 0)
+                {
+                    //关闭输入线程
+                    gameScene.stopThread();
+                    //切换结束场景
+                    Game.ChangeScene(E_SceneType.End);
+                    return;
+                }
                 //当方块转变时将其记录
                 recordInfo[h - walls[i].pos.y] += 1;
             }
