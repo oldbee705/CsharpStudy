@@ -12,18 +12,19 @@ namespace 俄罗斯方块
     {
         Map map;
         BlockWorker blockWorker;
-        Thread inputThread;
-        private bool isRunning;
+        //Thread inputThread;
+        //private bool isRunning;
 
         public GameScene()
         {
-            isRunning = true;
+            
             map = new Map(this);
             blockWorker = new BlockWorker();
-
-            inputThread = new Thread(CheckInputThread);
-            inputThread.IsBackground = true;
-            inputThread.Start();
+            InputThread.Instance.inputEvent += CheckInputThread;
+            //isRunning = true;
+            //inputThread = new Thread(CheckInputThread);
+            //inputThread.IsBackground = true;
+            //inputThread.Start();
         }
         public void Update()
         {
@@ -39,45 +40,41 @@ namespace 俄罗斯方块
         }
         public void stopThread()
         {
-            isRunning = false;
-            inputThread = null;
+            InputThread.Instance.inputEvent -= CheckInputThread;
         }
 
         private void CheckInputThread()
         {
-            while(isRunning)
+            //检测输入
+            if (Console.KeyAvailable)
             {
-                //检测输入
-                if (Console.KeyAvailable)
+                lock (blockWorker)
                 {
-                    lock (blockWorker)
+                    switch (Console.ReadKey(true).Key)
                     {
-                        switch (Console.ReadKey(true).Key)
-                        {
-                            //变形
-                            case ConsoleKey.LeftArrow:
-                                if (blockWorker.CanChange(E_Change_Type.Left, map))
-                                    blockWorker.Change(E_Change_Type.Left);
-                                break;
-                            case ConsoleKey.RightArrow:
-                                if (blockWorker.CanChange(E_Change_Type.Right, map))
-                                    blockWorker.Change(E_Change_Type.Right);
-                                break;
-                            //移动
-                            case ConsoleKey.A:
-                                if (blockWorker.CanMove(E_Change_Type.Left, map))
-                                    blockWorker.MoveLR(E_Change_Type.Left);
-                                break;
-                            case ConsoleKey.D:
-                                if (blockWorker.CanMove(E_Change_Type.Right, map))
-                                    blockWorker.MoveLR(E_Change_Type.Right);
-                                break;
-                            case ConsoleKey.S:
-                            case ConsoleKey.DownArrow:
-                                if (blockWorker.CanDown(map))
-                                    blockWorker.AutoMove();
-                                break;
-                        }
+                        //变形
+                        case ConsoleKey.LeftArrow:
+                            if (blockWorker.CanChange(E_Change_Type.Left, map))
+                                blockWorker.Change(E_Change_Type.Left);
+                            break;
+                        case ConsoleKey.RightArrow:
+                            if (blockWorker.CanChange(E_Change_Type.Right, map))
+                                blockWorker.Change(E_Change_Type.Right);
+                            break;
+                        //移动
+                        case ConsoleKey.A:
+                            if (blockWorker.CanMove(E_Change_Type.Left, map))
+                                blockWorker.MoveLR(E_Change_Type.Left);
+                            break;
+                        case ConsoleKey.D:
+                            if (blockWorker.CanMove(E_Change_Type.Right, map))
+                                blockWorker.MoveLR(E_Change_Type.Right);
+                            break;
+                        case ConsoleKey.S:
+                        case ConsoleKey.DownArrow:
+                            if (blockWorker.CanDown(map))
+                                blockWorker.AutoMove();
+                            break;
                     }
                 }
             }
