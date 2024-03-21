@@ -22,6 +22,8 @@ namespace 俄罗斯方块
         public const int h = 35;
         //当前选中的场景
         public static ISceneUpdate nowScene;
+        //记录得分
+        public static int score;
 
         public Game()
         {
@@ -54,6 +56,7 @@ namespace 俄罗斯方块
             {
                 case E_SceneType.Begin:
                     nowScene = new BeginScene();
+                    score = 0;
                     break;
                 case E_SceneType.Game:
                     nowScene = new GameScene();

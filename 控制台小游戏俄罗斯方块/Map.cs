@@ -42,14 +42,19 @@ namespace 俄罗斯方块
         }
         public void Draw()
         {
+            //静态墙壁
             for (int i = 0; i < walls.Count; i++)
             {
                 walls[i].Draw();
             }
+            //动态墙壁
             for (int i = 0; i < dynamicWalls.Count; i++)
             {
                 dynamicWalls[i].Draw();
             }
+            //信息烂
+            Console.SetCursorPosition(1, Game.h - 4);
+            Console.WriteLine("当前得分为：{0}",Game.score);
         }
         public void AddDynamicWalls(List<DrawObject> walls)
         {
@@ -108,12 +113,13 @@ namespace 俄罗斯方块
                         dynamicWalls.Remove(delWalls[j]);
                     }
                     //记录方块数量的容器从上到下迁移
-                    for(int j = 0; j < recordInfo.Length - 1; j++)
+                    for(int j = i; j < recordInfo.Length - 1; j++)
                     {
                         recordInfo[j] = recordInfo[j + 1];
                     }
                     //最上面一行置空
                     recordInfo[recordInfo.Length - 1] = 0;
+                    ++Game.score;
                     //消过一次之后在进行判断是否需要继续删除
                     CheckClear();
                     break;

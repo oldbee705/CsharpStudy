@@ -13,20 +13,20 @@ namespace 俄罗斯方块
         protected int nowSelIndex;
 
         public abstract void EnterJDoSomthing();
-        public void Update()
+        public virtual void Update()
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.SetCursorPosition(Game.w / 2 - strTitle.Length, 5);
+            Console.SetCursorPosition(Game.w / 2 - strTitle.Length, 6);
             Console.Write(strTitle);
 
-            Console.SetCursorPosition(Game.w / 2 - strOne.Length, 8);
+            Console.SetCursorPosition(Game.w / 2 - strOne.Length, 10);
             Console.ForegroundColor = nowSelIndex == 0 ? ConsoleColor.Red : ConsoleColor.White;
             Console.WriteLine(strOne);
 
-            Console.SetCursorPosition(Game.w / 2 - 4, 10);
+            Console.SetCursorPosition(Game.w / 2 - 4, 12);
             Console.ForegroundColor = nowSelIndex == 1 ? ConsoleColor.Red : ConsoleColor.White;
             Console.WriteLine("结束游戏");
-
+            
             switch (Console.ReadKey(true).Key)
             {
                 case ConsoleKey.W:
