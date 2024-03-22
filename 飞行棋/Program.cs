@@ -183,7 +183,7 @@
             Console.Clear();
             Console.CursorVisible = false;
             Console.SetWindowSize(x, y);
-            Console.SetBufferSize(x, y);
+            Console.SetBufferSize(x + 1, y + 1);
         }
 
         //初始化地图

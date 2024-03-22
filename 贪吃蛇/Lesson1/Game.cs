@@ -27,7 +27,7 @@ namespace 核心实践贪吃蛇.Lesson1
         {
             Console.CursorVisible = false;
             Console.SetWindowSize(w, h);
-            Console.SetBufferSize(w, h);
+            Console.SetBufferSize(w + 1, h + 1);
 
             ChangeScene(E_SceneType.Begin);
             

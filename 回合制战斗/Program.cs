@@ -3,7 +3,7 @@
 int x = 60;
 int y = 30;
 Console.SetWindowSize(x, y);
-Console.SetBufferSize(x, y);
+Console.SetBufferSize(x + 1, y + 1);
 Console.CursorVisible = false;
 Random random = new Random();
 Console.BackgroundColor = ConsoleColor.Black;
@@ -22,8 +22,8 @@ while (true)
     {
         //开始界面
         case 0:
-            Console.SetCursorPosition(x / 2 - 4, 8);
-            Console.WriteLine("2D小游戏");
+            Console.SetCursorPosition(x / 2 - 5, 8);
+            Console.WriteLine("回合制战斗");
             char input;
 
             while (true)
@@ -196,7 +196,7 @@ while (true)
                                     Console.SetCursorPosition(2, 28);
                                     Console.Write("                             ");
                                     Console.SetCursorPosition(2, 25);
-                                    Console.Write("你死了，哈哈");
+                                    Console.Write("你死了");
                                 }
                             }
                             else
