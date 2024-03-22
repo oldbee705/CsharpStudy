@@ -1,4 +1,4 @@
-﻿namespace 基础实践
+﻿namespace 简化版飞行棋
 {
     //场景
     enum E_Scene

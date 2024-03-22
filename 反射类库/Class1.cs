@@ -1,5 +1,6 @@
 ﻿namespace 反射类库
 {
+    //学习反射时使用
     class MyCustomAttribute : Attribute
     {
 

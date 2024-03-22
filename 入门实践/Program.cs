@@ -1,4 +1,4 @@
-﻿#region 控制台小游戏
+﻿#region 回合制战斗
 //地图大小,隐藏光标
 int x = 60;
 int y = 30;
@@ -196,7 +196,7 @@ while (true)
                                     Console.SetCursorPosition(2, 28);
                                     Console.Write("                             ");
                                     Console.SetCursorPosition(2, 25);
-                                    Console.Write("你死了，哈哈");
+                                    Console.Write("你死了");
                                 }
                             }
                             else
